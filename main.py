@@ -6,6 +6,16 @@ def encode(password):
     encoded += str(int(password[i]) + 3)
   return encoded
 
+def decode(password):
+    encoded_password = ""
+    for i in password:
+        i = int(i)
+        i = i - 3
+        i = str(i)
+        encoded_password = encoded_password + i
+    encoded_list = str(encoded_password)
+    print(encoded_list)
+
 def main():
     while True:
         option = int(input(f"Menu\n{'-' * 13}\n1. Encode\n2. Decode\n3. Quit\n\nPlease enter an option: "))
