@@ -24,12 +24,13 @@ def main():
             encoded = encode(password)
             print("Your password has been encoded and stored!\n")
         elif option == 2:
-            if password:
-                print(f"The encoded password is {encoded}, and the original password is {password}.")
-            else:
+            if password is None:
                 password = input("Please enter your password to decode: ")
                 decoded = decode(password)
                 print(f"The encoded password is {password}, and the original password is {decoded}.")
+            else:
+                print(f"The encoded password is {encoded}, and the original password is {password}.")
+
         elif option == 3:
             break
         else:
